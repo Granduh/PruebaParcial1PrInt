@@ -39,17 +39,17 @@ export function mostrarDetalleFactura(detalleElement, idx) {
       const prod = productos.find((prod) => prod.id === p.idProducto);
       const nombre = prod ? prod.nombre : p.idProducto;
       const precio = prod ? prod.precio : "";
-      return `<li>${nombre} x${p.cantidad} - $${p.subtotal.toFixed(2)}</li>`;
+      return "<li>" + nombre + " x" + p.cantidad + " - $" + p.subtotal.toFixed(2) + "</li>";
     })
     .join("");
   // Muestra el detalle completo de la factura en el elemento destino
-  detalleElement.innerHTML = `
-    <strong>Cliente:</strong> ${cliente ? cliente.nombre : "Sin cliente"}<br>
-    <strong>Productos:</strong>
-    <ul>
-      ${productosHTML}
-    </ul>
-    <strong>Total:</strong> $${factura.total.toFixed(2)}<br>
-    <strong>Fecha:</strong> ${factura.fecha}
-  `;
+  detalleElement.innerHTML =
+    "<strong>Cliente:</strong>" + (cliente ? cliente.nombre : "Sin cliente") + "<br>" +
+    "<strong>Productos:</strong>" +
+    "<ul>" +
+      productosHTML +
+    "</ul>" +
+    "<strong>Total:</strong> $" + factura.total.toFixed(2) + "<br>" +
+    "<strong>Fecha:</strong> " + factura.fecha
+  ;
 }
