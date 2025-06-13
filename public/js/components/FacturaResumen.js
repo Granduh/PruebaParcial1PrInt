@@ -19,9 +19,7 @@ class FacturaResumen extends HTMLElement {
         const prod = productos.find((p) => p.id === item.idProducto);
         // Muestra el nombre, cantidad y subtotal de cada producto
         return prod
-          ? `<p>${prod.nombre} x ${item.cantidad} = $${item.subtotal.toFixed(
-              2
-            )}</p>`
+          ? "<p>" + prod.nombre + " x " + item.cantidad + " = $" + item.subtotal.toFixed(2) + "</p>"
           : "";
       })
       .join("");

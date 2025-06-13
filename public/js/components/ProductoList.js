@@ -17,7 +17,7 @@ class ProductoList extends HTMLElement {
           productos
             .map(
               (p) =>
-                `<p>${p.nombre} (Código: ${p.id}) - $${p.precio.toFixed(2)}</p>`
+                "<p>" + p.nombre + " (Código: " + p.id + ") - $" + p.precio.toFixed(2) + "</p>"
             )
             .join("");
   }
